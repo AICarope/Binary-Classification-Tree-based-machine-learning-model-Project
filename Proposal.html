@@ -1,139 +1,170 @@
-Proposal
-
-DS/ML Capstone Proposal Instructions: https://codingnomads.com/dsml-capstone-proposal-instructions
-DS/ML Capstone Proposal Form: https://codingnomads.com/dsml-capstone-proposal-form-lab
-Semi-Formal Research Paper Format : https://codingnomads.com/dsml-capstone-formal-research-paper-format
-DS/ML Capstone Report Template: https://codingnomads.com/dsml-capstone-report-template
-
-
-
-**DS/ML Capstone Proposal**
-
 1. Domain Background
-
-HYPERAKTIV is a public dataset containing health, activity, andheart rate data from adult patients diagnosed with attention deficit hyperactivity disorder, better known as ADHD.
-The dataset consists of data collected from 51 adult patients with ADHD and 52 adult for clinical-controls. A total of 103 adult patients.
-Attention-Deficit/Hyperactivity Disorder (ADHD) is a diverse chronic condition affecting nearly five percent of the adult population. 
-The disorder often severely impacts social and occupational functioning,as well as quality of life for those affected [38]. ADHD diagnostics is
-currently based on subjective evaluation and clinical observations, and it is therefore a need for more objective methods [23, 35]
-
-Source: https://www.kaggle.com/datasets/arashnic/adhd-diagnosis-data, https://dl.acm.org/doi/pdf/10.1145/3458305.3478454 (white paper)
-https://github.com/simula/hyperaktiv (Github)
-https://osf.io/2tk4r (Data set view)
-
-Adult ADHD is a neuropsychiatric disorder characterized by the core symptoms hyperactivity, impulsivity and inattention. Symptoms must be present over time and negatively affect social, academic, or occupational functioning to qualify for the ADHD diagnosis. Inattention seems to be the primary feature of adult ADHD,
-characterized by disorganization and distraction, problems with staying on task and focused, as well as a propensity for persistent
-daydreaming. Many adults also have symptoms of impulsivity and hyperactivity, such as talkativeness, constant restlessness, and an
-inclination towards taking spontaneous decisions without evaluating potential consequences. Among children with ADHD, the latter
-condition generally has a more substantial manifestation [38]. Another difference between adult and pediatric ADHD is that ADHD
-seems to be a predominantly male disorder among children [29]. This gender difference becomes more equalized among adults [38].
-Stimulants are considered the most effective medications for ADHD treatment. However, such medications have a pronounced potential
-for misuse and dependency. In general, adult ADHD is associated with an increased risk of developing substance-use disorders [38].
-Furthermore, adult ADHD is also often concurrent with other psychiatric conditions such as mood and anxiety disorders, as well as
-sleeplessness [29, 34, 38].
-
+Attention-Deficit/Hyperactivity Disorder (ADHD) is a diverse chronic condition affecting nearly three percent of the adult population in the world. The disorder often severely impacts social and occupational functioning, as quality of life for those affected. Some of the most common symptoms are hyperactivity, impulsivity, and inattention, which are present during social, academic, or occupational activities. Adults with ADHD may display symptoms of impulsivity and hyperactivity, including talkativeness, restlessness, and a proclivity for making impulsive decisions without considering potential consequences. 
+Based on the provided web search results, the research conducted from 2020 to the present on ADHD, anxiety, and substance abuse it has led to significant findings. 
+The studies have revealed a high comorbidity of adult ADHD with anxiety, major depressive disorder, bipolar disorder, and substance use disorders. The research has also highlighted the absence of gender-specific modifications, emphasizing the prevalence of comorbid conditions in both men and women with ADHD. Additionally, the effectiveness of ADHD treatment in reducing the risk of comorbidity has been suggested as a potential area for further investigation. The papers contributing to this research include:
+1.	"Adult ADHD: a new disease?" by Zalsman G, Shilton T. Int J Psychiatry Clin Pract. 2016
+2.	"ADHD in children and young people: prevalence, care pathways, and service provision" by Sayal K, Prasad V, Daley D, Ford T, Coghill D. Lancet Psychiatry. 2018
+3.	"Attention-deficit/hyperactivity disorder: diagnostic criteria, epidemiology, risk factors and evaluation in youth" by Cabral MD, Liu S, Soares N. Transl Pediatr. 2020
+4.	"Trends in the prevalence and incidence of attention-deficit/hyperactivity disorder among adults and children of different racial and ethnic groups" by Chung W, Jiang SF, Paksarian D, Nikolaidis A, Castellanos FX, Merikangas KR, Milham MP. JAMA Netw Open. 2019
+"ADHD: current concepts and treatments in children and adolescents" by Drechsler R, Brem S, Brandeis D, Grunblatt E, Berger G, Walitza S. Neuropediatrics.
 
 
 2. Problem Statement
+Develop a Binary Classification Tree based machine learning model to analyze the associations between adults with ADHD and co-occurring conditions, specifically anxiety and substance abuse, while seeking to understand the age range of the individuals in the dataset to gain insights into their interrelationships and potential predictive factors. 
+The predictive model can have an accuracy of 81% as a baseline and it will be evaluated after executing a detail analysis using Python for Data Science and Machine learning algorithms. 
 
-##Potential use cases
-    a. Predict individuals that has ADHD and have a high level of activity data and hrv files
-    b. Analyze the associations between ADHD and other illness (interested) (y = illness Target variable) (x = adhd, AGE,  0 or 1 boolean) Nte: matbe ASRS for later
-    c. Potential advance diagnosis and treatments (maybe)
-    d. Predict individuals that has ADHD and subtance (addiction) abuse (interested) maybe in b.
-    e. Predict individuals with adhd and present emotional inestability (interested) 
+3. Datasets and Inputs
+The HYPERAKTIV dataset used for this analysis is open source and contains health, activity, and heart rate data from 51 adult patients with ADHD and 52 clinical controls, totaling 103 adult patients. ADHD affects nearly five percent of the adult population, significantly impacting social and occupational functioning and quality of life. Currently, ADHD diagnosis relies on subjective evaluation and clinical observations, highlighting the need for more objective methods.
+The data collected were recordings of motor activity and heart rate, the output of a computerized test of attention-related problems, as well as various diagnostic and clinical assessments. A total of thirty-one data points or variables are collected into four main files:
+1) Activity data contains the activity measurements from all participants, each organized into separate files with metadata at the beginning. 
+2)HRV_data holds the heart rate data from each participant, similarly organized into individual files with metadata preceding the data. 
+3) The hyperaktiv_with_controls data is also present. 
+4) CPT_II_ConnersContinuousPerformanceTest.csv file contains individual responses to CPT-II test trials, and the file names features.csv contains pre-extracted features for the experiments. 
+5) patient_info.csv file includes various participant attributes such as age, sex, and mental state information, along with output data from a neuropsychological test.
 
-    Decision: b and d.
-    
-    Problem:  Analyze the associations between adults with ADHD and co-occurring conditions such as anxiety, substance abuse. Understanding the age range
-    to gain insights into their interrelationships and potential predictive factors.
-     e.g., Predict whether an adult patient with ADHD will develop anxiety
-           Predict whether an adult patient with ADHD will subtance abuse
-           Predict whether an adult patient with ADHD will other conditions
-
-    Time: in the next 3 years
-    2a. classification or regression 
-    2b.  Claissification Decision Tree Binary
-        X = Age: Participant ages are presented in four groups, where (1) = 17-29 years, (2) = 30-39 years, (3) = 40-49 years and (4) = 50-67 years.
+For the purpose of this project file number 5) was used to apply Python for Data Science and Machine Learning, selecting the variables:
+X = Age: Participant ages are presented in four groups, where (1) = 17-29 years, (2) = 30-39 years, (3) = 40-49 years and (4) = 50-67 years.
                 AGE Qualitative>Ordinal variable 
-            ADHD: General presece of ADHD n=51. not present (0), present (1), or unknown (9). 
+    ADHD: General presece of ADHD n=51. not present (0), present (1), or unknown (9). 
                 ADHD Qualitative>Nominal>Categorical variable. 
             X = Predictor variables
-        Y = Anxiety: not present (0), present (1), unknown (9), or control(2) 
+
+Y = Anxiety: not present (0), present (1), unknown (9), or control(2) 
                 Qualitative>Nominal variable
             Substance: drug, alcohol, addictions. not present (0), present (1), unknown (9), or control(2) 
                 Qualitative>Nominal variable 
             Y = variables being predicted
             
- 
 Note: (9) Unknonw values have been removed ffrom the data set. (2) Control have been updated to (0) for healthy individuals.
 
-    Objective: Understanding these associations can aid in early identification, intervention, and personalized treatment strategies
-    for individuals with ADHD and coexisting conditions.
+Objective: Understanding these associations can aid in early identification, intervention, and personalized treatment strategies
+           for individuals with ADHD and coexisting conditions.
+        
+                1. Explore the patterns and associations between ADHD and anxiety disorders, substance abuse, and age.
+                2. Develop predictive models to identify potential risk factors or indicators for the co-occurrence of ADHD with other conditions.
+                3. Provide insights that can contribute to the development of targeted interventions and personalized treatment approaches for individuals with ADHD and co-occurring conditions.
+Significance: This research can potentially improve clinical practices, enhance early detection strategies, and contribute to the overall well-being of individuals affected by these conditions.         
 
-        1. Explore the patterns and associations between ADHD and anxiety disorders, substance abuse, and age.
-        2. Develop predictive models to identify potential risk factors or indicators for the co-occurrence of ADHD with other conditions.
-        3. Provide insights that can contribute to the development of targeted interventions and personalized treatment approaches for individuals with ADHD and co-occurring conditions.
-    Significance: This research can potentially improve clinical practices, enhance early detection strategies, and contribute to the overall well-being of individuals affected by these conditions.
+4. Solution Statement
+Performing exploratory data analysis and machine learning methodologies will help to evaluate the models' generalization capability. Using, Random Forest and AdaBoost models could describe the generalization of data, provide information for overfitting or underfitting to improve the model performance; in predicting anxiety based on age and ADHD> Further refinement through hyperparameter tuning, or additional data variables will be executed. 
 
-3. Data Set Inputs
+5. Benchmark Model
+An estimate of a baseline for accuracy is 0.81. Ideally by applying a machine learning model the accuracy can increase.
+
+6. Evaluation Metrics
+As the project is Supervised, Classification, Decision Tree Binary, the metrics used are the standard as:
+-Prediction time and training time: Are important in machine learning to identify efficiency and practicality of deploying machine learning models. If the result leads to a faster time, it will allow quicker model deployment.
+-F1 Score: Given the nominal nature of the ANXIETY and SUBSTANCE ABUSE variables, the F1 score is crucial as it balances precision and recall, providing a good measure of the model's predictive power, while considering false positives and false negatives.
+-Precision and Recall: Precision is the ratio of correctly predicted positive observations to the total predicted positives, while recall is the ratio of correctly predicted positive observations to all actual positives.
+-Accuracy: This metric provides a simple and intuitive measure of the model's overall correctness and is valuable for understanding the proportion of correct predictions.
+These metrics are crucial for evaluating the model's performance in identifying positive cases (ANXIETY and SUBSTANCE presence) accurately and with minimal false positives or false negative
+
+7. Project Design
+
+Step 1: Data Collection and Preprocessing
+Data Collection: Obtain access to the HYPERAKTIV dataset to identify demographic and diagnostic information of adults, including ADHD diagnosis, anxiety status, substance abuse, and age range.
+Data Cleaning: Address any missing or inconsistent data, handle unknown (9) and control values (2), and ensure data quality and consistency, to reflect only (0) not present or (1) present for ADHD, SUBSTNACE and ANXIETY.
+Data Exploration: Conduct exploratory data analysis to understand the distribution and relationships within the dataset, and visualize the age range and frequency of co-occurring conditions. Keeping in mind that the variable types:
+•	X= AGE Qualitative>Ordinal variable
+•	X =ADHD Qualitative>Nominal>Categorical variable
+•	Y = ANXIETY Qualitative>Nominal variable
+•	Y = SUBSTANCE Qualitative>Nominal variable
+
+Step 2: Feature Engineering and Selection
+Determine relevant features that can explain the variation in anxiety and substance.
+
+Step 3: Model Development and Training
+Decision Tree Model Selection: from a list of suitable algorithms as Adaboost, Random Forest or XGBoost. 
+Data Splitting: Split the dataset into training and testing sets to enable model evaluation. For example,   
+X = Predictor variables (ADHD, AGE)
+•	X_train:80% 
+•	X_test:20% 
+Y = variables being predicted (SUBSTANCE, ANXIETY) TARGET VARIABLE
+•	Y_train:80% 
+•	Y_test: 20%
+Model Training: Train the decision tree model using the HYPERAKTIV dataset, including the features related to ADHD, anxiety, substance abuse, and age as input variables.
+
+Step 4: Model Evaluation and Optimization
+Performance Metrics: Evaluate the model's performance using metrics such as accuracy, precision, recall, and F1 score.
+Cross-Validation: Implement cross-validation techniques to ensure robust model evaluation and mitigate overfitting.
+Hyperparameter Tuning: Optimize the decision tree model's hyperparameters to enhance its predictive capabilities and generalization.
+
+Step 5: Interpretation and Insights
+Model Interpretation: Analyze the decision tree model's structure and rules to understand the associations and predictive factors related to ADHD, anxiety, substance abuse, and age.
+
+Step 6: Visualization and Reporting
+Results Visualization: Visualize the decision tree model's structure, feature importances, and key insights using appropriate visualization techniques.
+Report Generation: Summarize the project findings, including the associations between ADHD and co-occurring conditions, the impact of age range, and potential predictive factors.
+
+Step 7: Deployment and Application
+Model Deployment: Prepare the decision tree model for deployment in GitHub
+By following this end-to-end workflow, the project aims to develop a robust binary decision tree model to analyze the associations between adults with ADHD and co-occurring conditions, providing valuable insights into their interrelationships and potential predictive factors.
+
+ 
+Appendix:
+        DS/ML Capstone Proposal Instructions: https://codingnomads.com/dsml-capstone-proposal-instructions
+        DS/ML Capstone Proposal Form: https://codingnomads.com/dsml-capstone-proposal-form-lab
+        Semi-Formal Research Paper Format : https://codingnomads.com/dsml-capstone-formal-research-paper-format
+        DS/ML Capstone Report Template: https://codingnomads.com/dsml-capstone-report-template
+        Source: https://www.kaggle.com/datasets/arashnic/adhd-diagnosis-data, https://dl.acm.org/doi/pdf/10.1145/3458305.3478454 (white paper)
+        https://github.com/simula/hyperaktiv (Github)
+        https://osf.io/2tk4r (Data set view)
+        
 A total of 103 patients were recruited, 51 of which were diagnosed with ADHD, and 52 with other diagnoses (clinical controls). The Norwegian Regional
 Medical Research Ethics Committee West approved the original protocol for the data collection, and all processes were in accordance with the Helsinki Declaration of 1975. The data collected
 were recordings of motor activity and heart rate, the output of a computerized test of attention-related problems, as well as various
 diagnostic and clinical assessments [10–12]
-
+        
 The dataset is organized into four different items that can be found in the root directory. 
-    1)activity_data contains the activity data collected from all participants, organized into separate files. Each file starts with few lines of metadata before the activity measurements start. 
-    2)hrv_data contains the heart rate data collected from all participants, and like the activity data, it is separated into one file per participant. Each file starts with two lines of metadata before the IBI values start. 
-    2a) hyperaktiv_with_controls
-    3)CPT_II_ConnersContinuousPerformanceTest.csv contains the individual responses of the 360 CPT-II test trials, the omission and commission errors, and the ADHD Confidence Index. The file names features.csv contains the pre-extracted features used to perform the
-    experiments presented in Section 7 of the white paper. Each line in the file corresponds to features for a single participant. 
-    4)patient_info.csv #contains all the information featured in Section 4 of the white paper. The file consists of 32 different columns, where each line corresponds to features
-    for a single participant. In addition to the activity and heart rate data, also includes a series of patient attributes such as their age, sex, and information about their mental state, as well as output data from a computerized neuropsychological test.
-
-        **********Variables in: patient_info.csv
-        1. ID:Patient ID
-        2. SEX:Male (0),Female (1)
-        3. AGE: Participant ages are presented in four groups, where (1) = 17-29 years, (2) = 30-39 years, (3) = 40-49 years and (4) = 50-67 years.
-        4. ACC:  Identifies the participants who have recorded motor activity. The dichotomous variable ACC identifies the participants who have
-        recorded motor activity (N/Y)
-        5. ACC-TIME: The ACC-TIME variable tells when the recordings were started (HH:MM)
-        6. ACC-DAYS:gives the number of 24h cycles recorded for each participant. The 45 patients with ADHD recorded motor activity for 6.6 ± 1.3 days (mean ±
-        standard derivation), and the 40 clinical controls recorded motor activity for 7.2 ± 0.9 days
-        7. HRV:Heart rate was recorded naturalistically with the chest-worn ECG-based monitoring device Actiheart (Cambridge Neurotechnology Ltd, England) [3]. 
-        The dichotomous variable HRV identifies the participants who have recorded heart rate (N/Y)
-        8. HRV-HOURS: HRVHOURS gives the approximate number of hours heart rate was recorded for each participant. A total of 80 participants provided
-        heart rate recordings: 38 ADHD patients for an average of 20.5±3.9 hours, and 42 clinical controls for 21 ± 4.3 hours.
-        8A. HRV-TIME: Tells when the recordings were started (HH:MM)
-        9. CPT-II:Conner’s Continuous Performance Test II (CPT-II) is a computerized neuropsychological test which evaluates impulsivity and
-        sustained attention by response or nonresponse to various letters presented for 250 milliseconds on the PC screen. CPT-II contains 360
-        trials divided into six blocks, defined by the time interval between the presented letters [25]. CPT-II calculates and outputs various
-        estimates, like omission and commission errors, as well as a clinical ADHD Confidence Index score (range 0–100). However, analyzing
-        the raw data (the responses of the 360 trials) has previously been fruitful for distinguishing between patient groups in the current
-        dataset [12]. In total, 49 clinical controls and 50 participants with ADHD completed the CPT-II test
-        10. ADHD: General presece of ADHD n=51. not present (0), present (1), or unknown (9)
-        11. ADD: ADHD Inatentive n=23
-        12. BIPOLAR: Present or not. not present (0), present (1), or unknown (9)
-        13. UNIPOLAR: not present (0), present (1), or unknown (9). The BIPOLAR, UNIPOLAR, and ANXIETY variables specify the presence of Bipolar Disorder, Unipolar Depression and/or
-        Anxiety disorder
-        14. ANXIETY: not present (0), present (1), or unknown (9), Control (2)
-        15. SUBSTANCE:drug, alcohol, addictions. not present (0), present (1), or unknown (9), Control (2)
-        16. OTHER:Additional psychiatric issues
-        17. CT:cylothymic tmperature scale. 21 emotional inestability and hypersensitivity to external stimuly associated with spectrum
-        18. MDQ-POS:Mood Disorder questionare MDQ for bipolarity. 13 questions Y/N (7-13)
-        19. WURS: wender utha rating scale for ADHD presecne and severity of a childhood ADHD. Sum (0-100), if higer score then severity of symptoms 
-        20. ASRS: adhd self report state, evaluate current symptomps of ADHD (0-72 SUM) if score is high more severe symptoms of impulsivity, hyperactivity, innatention
-        21. MADRS:montgomery and asher depression rating, severity of ongoing depression (0-60) < 10 = no depression
-        22. HADS-A: Hospital anxiety and depression 0 and 21 <8 = no anxiety and depression
-        23. 'HASDS-D':
-        24. MED:
-        25. MED-ANTIDEP:
-        26. MED-MOODSTAB:
-        27. MED-ANTIPSYCH:
-        28. MED-ANXIETY-BENZO:
-        29. MED-SLEEP:
-        30. MED-ANALGESIC-OPIODS:
-        31. MED-STIM:
-        32: FILTER $ 
-
-
+            1)activity_data contains the activity data collected from all participants, organized into separate files. Each file starts with few lines of metadata before the activity measurements start. 
+            2)hrv_data contains the heart rate data collected from all participants, and like the activity data, it is separated into one file per participant. Each file starts with two lines of metadata before the IBI values start. 
+            2a) hyperaktiv_with_controls
+            3)CPT_II_ConnersContinuousPerformanceTest.csv contains the individual responses of the 360 CPT-II test trials, the omission and commission errors, and the ADHD Confidence Index. The file names features.csv contains the pre-extracted features used to perform the
+            experiments presented in Section 7 of the white paper. Each line in the file corresponds to features for a single participant. 
+            4)patient_info.csv #contains all the information featured in Section 4 of the white paper. The file consists of 32 different columns, where each line corresponds to features
+            for a single participant. In addition to the activity and heart rate data, also includes a series of patient attributes such as their age, sex, and information about their mental state, as well as output data from a computerized neuropsychological test.
+        
+                **********Variables in: patient_info.csv
+                1. ID:Patient ID
+                2. SEX:Male (0),Female (1)
+                3. AGE: Participant ages are presented in four groups, where (1) = 17-29 years, (2) = 30-39 years, (3) = 40-49 years and (4) = 50-67 years.
+                4. ACC:  Identifies the participants who have recorded motor activity. The dichotomous variable ACC identifies the participants who have
+                recorded motor activity (N/Y)
+                5. ACC-TIME: The ACC-TIME variable tells when the recordings were started (HH:MM)
+                6. ACC-DAYS:gives the number of 24h cycles recorded for each participant. The 45 patients with ADHD recorded motor activity for 6.6 ± 1.3 days (mean ±
+                standard derivation), and the 40 clinical controls recorded motor activity for 7.2 ± 0.9 days
+                7. HRV:Heart rate was recorded naturalistically with the chest-worn ECG-based monitoring device Actiheart (Cambridge Neurotechnology Ltd, England) [3]. 
+                The dichotomous variable HRV identifies the participants who have recorded heart rate (N/Y)
+                8. HRV-HOURS: HRVHOURS gives the approximate number of hours heart rate was recorded for each participant. A total of 80 participants provided
+                heart rate recordings: 38 ADHD patients for an average of 20.5±3.9 hours, and 42 clinical controls for 21 ± 4.3 hours.
+                8A. HRV-TIME: Tells when the recordings were started (HH:MM)
+                9. CPT-II:Conner’s Continuous Performance Test II (CPT-II) is a computerized neuropsychological test which evaluates impulsivity and
+                sustained attention by response or nonresponse to various letters presented for 250 milliseconds on the PC screen. CPT-II contains 360
+                trials divided into six blocks, defined by the time interval between the presented letters [25]. CPT-II calculates and outputs various
+                estimates, like omission and commission errors, as well as a clinical ADHD Confidence Index score (range 0–100). However, analyzing
+                the raw data (the responses of the 360 trials) has previously been fruitful for distinguishing between patient groups in the current
+                dataset [12]. In total, 49 clinical controls and 50 participants with ADHD completed the CPT-II test
+                10. ADHD: General presece of ADHD n=51. not present (0), present (1), or unknown (9)
+                11. ADD: ADHD Inatentive n=23
+                12. BIPOLAR: Present or not. not present (0), present (1), or unknown (9)
+                13. UNIPOLAR: not present (0), present (1), or unknown (9). The BIPOLAR, UNIPOLAR, and ANXIETY variables specify the presence of Bipolar Disorder, Unipolar Depression and/or
+                Anxiety disorder
+                14. ANXIETY: not present (0), present (1), or unknown (9), Control (2)
+                15. SUBSTANCE:drug, alcohol, addictions. not present (0), present (1), or unknown (9), Control (2)
+                16. OTHER:Additional psychiatric issues
+                17. CT:cylothymic tmperature scale. 21 emotional inestability and hypersensitivity to external stimuly associated with spectrum
+                18. MDQ-POS:Mood Disorder questionare MDQ for bipolarity. 13 questions Y/N (7-13)
+                19. WURS: wender utha rating scale for ADHD presecne and severity of a childhood ADHD. Sum (0-100), if higer score then severity of symptoms 
+                20. ASRS: adhd self report state, evaluate current symptomps of ADHD (0-72 SUM) if score is high more severe symptoms of impulsivity, hyperactivity, innatention
+                21. MADRS:montgomery and asher depression rating, severity of ongoing depression (0-60) < 10 = no depression
+                22. HADS-A: Hospital anxiety and depression 0 and 21 <8 = no anxiety and depression
+                23. 'HASDS-D':
+                24. MED:
+                25. MED-ANTIDEP:
+                26. MED-MOODSTAB:
+                27. MED-ANTIPSYCH:
+                28. MED-ANXIETY-BENZO:
+                29. MED-SLEEP:
+                30. MED-ANALGESIC-OPIODS:
+                31. MED-STIM:
+                32: FILTER $ 
