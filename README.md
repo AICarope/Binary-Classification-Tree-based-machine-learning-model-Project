@@ -2,7 +2,7 @@
 
 This project presents a **Binary Classification Tree** model to analyze the associations between adults diagnosed with **ADHD** and co-occurring conditions, specifically **anxiety** and **substance abuse**, using machine learning techniques in **Python**.
 
-Main [Research Report](https://github.com/AICarope/Binary-Classification-Tree-based-machine-learning-model-Project/blob/main/Project%20Report/Project%203%20Research%20Report.docx) click View raw to download file.
+Main [Research Report](https://github.com/AICarope/Binary-Classification-Tree-based-machine-learning-model-Project/blob/main/Project%20Report/Project%203%20Research%20Report.docx) click **View raw** to download file.
 
 ## Abstract
 **ADHD** is a chronic condition affecting around 3% of the adult population. This disorder significantly impacts social and occupational functions. Common symptoms include hyperactivity, impulsivity, and inattention. The **HYPERAKTIV** dataset was used to explore the relationship between ADHD and co-occurring conditions like anxiety and substance abuse.
