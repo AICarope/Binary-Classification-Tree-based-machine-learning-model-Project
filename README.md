@@ -10,6 +10,7 @@ Main [Research Report](https://github.com/AICarope/Binary-Classification-Tree-ba
 Two models were developed:
 - **Model 1:** Predicts the presence of **substance abuse**.
 - **Model 2:** Predicts the presence of **anxiety**.
+
 <img src="https://github.com/user-attachments/assets/6a29b07d-a305-460c-ac46-4eb1117d63b7" width="400" />
 
 
