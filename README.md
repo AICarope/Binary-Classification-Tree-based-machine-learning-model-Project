@@ -10,6 +10,7 @@ Main [Research Report](https://github.com/AICarope/Binary-Classification-Tree-ba
 Two models were developed:
 - **Model 1:** Predicts the presence of **substance abuse**.
 - **Model 2:** Predicts the presence of **anxiety**.
+![image](https://github.com/user-attachments/assets/6a29b07d-a305-460c-ac46-4eb1117d63b7)
 
 The models were built using **AdaBoostClassifier** and **RandomForestClassifier**, achieving an accuracy of **81.48%** for **substance abuse** prediction. However, anxiety prediction requires further refinement due to a lower **F1 Score**.
 
