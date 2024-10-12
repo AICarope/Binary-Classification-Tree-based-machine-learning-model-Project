@@ -2,8 +2,6 @@
 
 This project presents a **Binary Classification Tree** model to analyze the associations between adults diagnosed with **ADHD** and co-occurring conditions, specifically **anxiety** and **substance abuse**, using machine learning techniques in **Python**.
 
-Main [Research Report](https://github.com/AICarope/Binary-Classification-Tree-based-machine-learning-model-Project/blob/main/Project%20Report/Project%203%20Research%20Report.docx) click **View raw** to download file.
-
 ## Materials
 
 You can access the materials by clicking the hyperlinks below. After clicking, select "View raw" to download the files.
