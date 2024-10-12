@@ -4,6 +4,18 @@ This project presents a **Binary Classification Tree** model to analyze the asso
 
 Main [Research Report](https://github.com/AICarope/Binary-Classification-Tree-based-machine-learning-model-Project/blob/main/Project%20Report/Project%203%20Research%20Report.docx) click **View raw** to download file.
 
+## Materials
+
+You can access the materials by clicking the hyperlinks below. After clicking, select "View raw" to download the files.
+
+- [Research Report](https://github.com/AICarope/Binary-Classification-Tree-based-machine-learning-model-Project/blob/main/Project%20Report/Project%203%20Research%20Report.docx)
+
+- [Python Notebook: Exploratory Data Analysis](https://github.com/AICarope/Binary-Classification-Tree-based-machine-learning-model-Project/blob/main/1.EDA.ipynb)
+
+- [Python Notebook: ML Model for Substance](https://github.com/AICarope/Binary-Classification-Tree-based-machine-learning-model-Project/blob/main/2.%20ML%20Substance.ipynb)
+
+- [Python Notebook: ML Anxiety](https://github.com/AICarope/Binary-Classification-Tree-based-machine-learning-model-Project/blob/main/3.%20ML%20Anxiety.ipynb)
+
 ## Abstract
 **ADHD** is a chronic condition affecting around 3% of the adult population. This disorder significantly impacts social and occupational functions. Common symptoms include hyperactivity, impulsivity, and inattention. The **HYPERAKTIV** dataset was used to explore the relationship between ADHD and co-occurring conditions like anxiety and substance abuse.
 
